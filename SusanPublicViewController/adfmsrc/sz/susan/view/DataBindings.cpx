@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.64.36" id="DataBindings"
+             SeparateXMLFiles="false" Package="sz.susan.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/QueryView.jspx" usageId="sz_susan_view_QueryViewPageDef"/>
+    <page path="PageFlow#SetCurrentRowWithKey" usageId="sz_susan_view_adfc_config___SetCurrentRowWithKeyPageDef"/>
+    <page path="/DisplayVIew.jspx" usageId="sz_susan_view_DisplayVIewPageDef"/>
+    <page path="/GraphView.jspx" usageId="sz_susan_view_GraphViewPageDef"/>
+    <page path="/TransactionView.jspx" usageId="sz_susan_view_TransactionViewPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="sz_susan_view_QueryViewPageDef" path="sz.susan.view.pageDefs.QueryViewPageDef"/>
+    <page id="sz_susan_view_adfc_config___SetCurrentRowWithKeyPageDef"
+          path="sz.susan.view.pageDefs.adfc_config___SetCurrentRowWithKeyPageDef"/>
+    <page id="sz_susan_view_DisplayVIewPageDef" path="sz.susan.view.pageDefs.DisplayVIewPageDef"/>
+    <page id="sz_susan_view_GraphViewPageDef" path="sz.susan.view.pageDefs.GraphViewPageDef"/>
+    <page id="sz_susan_view_TransactionViewPageDef" path="sz.susan.view.pageDefs.TransactionViewPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="transAMDataControl" Package="sz.susan.AM"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="transAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

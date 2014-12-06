@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="GraphViewPageDef"
+                Package="sz.susan.view.pageDefs">
+  <parameters/>
+  <executables>
+    <invokeAction id="invokeAction1" Binds="initService" Refresh="ifNeeded"/>
+    <variableIterator id="variables"/>
+    <iterator Binds="InvokeTimeViewObj1" RangeSize="-1" DataControl="transAMDataControl"
+              id="InvokeTimeViewObj1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="initService" InstanceName="data.transAMDataControl.dataProvider" DataControl="transAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod" MethodName="initService" IsViewObjectMethod="false"
+                  ReturnName="data.transAMDataControl.methodResults.initService_transAMDataControl_dataProvider_initService_result"/>
+    <graph IterBinding="InvokeTimeViewObj1Iterator" id="InvokeTimeViewObj1" xmlns="http://xmlns.oracle.com/adfm/dvt"
+           type="PIE">
+      <graphDataMap convert="false" leafOnly="true">
+        <series>
+          <item value="Name"/>
+        </series>
+        <groups>
+          <data>
+            <item value="CountNode"/>
+          </data>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
+</pageDefinition>

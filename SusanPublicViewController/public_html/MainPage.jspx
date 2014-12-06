@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="MainPage" id="d1">
+            <af:form id="f1">
+                <af:panelStretchLayout id="psl1" bottomHeight="193px">
+                    <f:facet name="bottom">
+                        <af:panelGroupLayout layout="scroll" id="pgl5" halign="center">
+                            <f:verbatim>
+                                <img width="150" height="18"
+                                     src="http://docs.oracle.com/cd/E14571_01/dcommon/gifs/oracle.gif" alt="Oracle"
+                                     style="color:rgb(0,0,0); font-family:Tahoma, sans-serif; font-size:12px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:normal; text-align:center; text-indent:0px; text-transform:none; white-space:normal; word-spacing:0px; -webkit-text-stroke-width:0px; background-color:rgb(255,255,255);"
+                                     align="middle">
+                                    <br style="color: rgb(0, 0, 0); font-family: Tahoma, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                                        <span style="color: rgb(0, 0, 0); font-family: Tahoma, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">Copyright&nbsp;©&nbsp;2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span>
+                                    </br>
+                                </img>
+                            </f:verbatim>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="center">
+                        <af:panelGroupLayout layout="scroll" id="pgl4">
+                            <af:panelGroupLayout layout="vertical" id="pgl3" halign="center" valign="middle">
+                                <p>
+                                    &nbsp;
+                                </p>
+                                <p>
+                                    <af:goLink text="生成服务报表" id="gl3" targetFrame="_blank" destination="GraphView.jspx"
+                                               inlineStyle="font-size:x-large;"></af:goLink>
+                                        <p>
+                                            &nbsp;
+                                        </p>
+                                        <p>
+                                            &nbsp;
+                                        </p>
+                                        <p>
+                                            &nbsp;
+                                        </p>
+                                        <af:goLink text="生成交易报表" id="gl4" targetFrame="_blank" destination="QueryView" inlineStyle="font-size:x-large;">
+                                            </af:goLink><p>
+                                                &nbsp;
+                                            </p>
+                                            <p>
+                                                &nbsp;
+                                            </p>
+
+                                    
+                                </p>
+                            </af:panelGroupLayout>
+                            <f:verbatim>
+                                <p>
+                                    &nbsp;
+                                </p>
+                            </f:verbatim>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                        <af:panelGroupLayout layout="scroll" id="pgl2" halign="center" valign="bottom">
+                            <h4>
+                                <strong>
+                                    <em>
+                                        <af:outputText value="服务调用关系报表系统" id="ot7"
+                                                       inlineStyle="color:Red; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; text-align:center; font-size:xx-large; font-style:normal;"/></em></strong>
+                            </h4>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end"/>
+                </af:panelStretchLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

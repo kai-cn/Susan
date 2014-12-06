@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="DisplayVIew" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelStretchLayout id="psl1" topHeight="51px">
+                    <f:facet name="bottom">
+                        <af:commandLink text="生成报表" id="cl1" action="generate"
+                                        actionListener="#{bindings.SetViewCriteria.execute}"/>
+                    </f:facet>
+                    <f:facet name="center">
+                        <af:panelGroupLayout layout="scroll" id="pgl9" halign="center">
+                            <af:panelGroupLayout id="pgl8" halign="center" valign="middle">
+                                <af:separator id="s13"/>
+                                <af:panelFormLayout id="pfl11">
+                                    <af:panelLabelAndMessage label="#{bindings.Name.hints.label}" id="plam20">
+                                        <af:outputText value="#{bindings.Name.inputValue}"
+                                                       shortDesc="#{bindings.Name.hints.tooltip}" id="ot24"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Description.hints.label}" id="plam21">
+                                        <af:outputText value="#{bindings.Description.inputValue}"
+                                                       shortDesc="#{bindings.Description.hints.tooltip}" id="ot25"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Transactiondate.hints.label}"
+                                                             id="plam22">
+                                        <af:outputText value="#{bindings.Transactiondate.inputValue}"
+                                                       shortDesc="#{bindings.Transactiondate.hints.tooltip}" id="ot28">
+                                            <af:convertDateTime pattern="#{bindings.Transactiondate.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.ExceptTotalTime.hints.label}"
+                                                             id="plam23">
+                                        <af:outputText value="#{bindings.ExceptTotalTime.inputValue}"
+                                                       shortDesc="#{bindings.ExceptTotalTime.hints.tooltip}" id="ot29">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ExceptTotalTime.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.Successflag.hints.label}" id="plam24">
+                                        <af:outputText value="#{bindings.Successflag.inputValue}"
+                                                       shortDesc="#{bindings.Successflag.hints.tooltip}" id="ot30"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl10">
+                                <f:facet name="separator"/>
+                                <dvt:hierarchyViewer inlineStyle="width:100%;height:500px;" id="hv1" var="node"
+                                                     value="#{bindings.Depth_1_VO1.treeModel}"
+                                                     selectionListener="#{bindings.Depth_1_VO1.treeModel.makeCurrent}"
+                                                     detailWindow="none" layout="hier_vert_top"
+                                                     levelFetchSize="#{bindings.Depth_1_VO1.rangeSize}">
+                                    <dvt:link linkType="orthogonalRounded" id="l1"/>
+                                    <dvt:node type="sz.susan.VO.Depth_1_VO" width="233" height="233" id="n2">
+                                        <f:facet name="zoom100">
+                                            <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl3">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl13">
+                                                    <af:panelGroupLayout layout="vertical" id="pgl2">
+                                                        <af:outputText value="#{node.Name}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Name.tooltip}"
+                                                                       inlineStyle="font-weight:bold;font-size:14px;color:#383A47"
+                                                                       id="ot5"/>
+                                                        <af:outputText value="#{node.Id}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Id.tooltip}"
+                                                                       inlineStyle="font-size:14px;color:#383A47"
+                                                                       id="ot15">
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Depth_1_VO1.hints.Id.format}"/>
+                                                        </af:outputText>
+                                                        <af:outputText value="#{node.Description}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Description.tooltip}"
+                                                                       inlineStyle="font-style:italic;font-size:14px;color:#383A47"
+                                                                       id="ot14"/>
+                                                    </af:panelGroupLayout>
+                                                </af:panelGroupLayout>
+                                                <af:spacer height="5" id="s7"/>
+                                                <dvt:panelCard effect="slide_horz" id="pc2">
+                                                    <af:showDetailItem text="Panel Card 1" id="sdi7">
+                                                        <af:spacer height="2" id="s11"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl7">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Time.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam7">
+                                                                <af:outputText value="#{node.Time}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Time.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot13">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Time.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Id1.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam4">
+                                                                <af:outputText value="#{node.Id1}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Id1.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot1">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Id1.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                    <af:showDetailItem text="Panel Card 2" id="sdi8">
+                                                        <af:spacer height="2" id="s12"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl8">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Cpu.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam9">
+                                                                <af:outputText value="#{node.Cpu}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Cpu.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot8">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Cpu.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.TransactionId.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam2">
+                                                                <af:outputText value="#{node.TransactionId}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.TransactionId.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot10">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.TransactionId.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                </dvt:panelCard>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </dvt:node>
+                                    <dvt:node type="sz.susan.VO.Depth_2_VO" width="233" height="233" id="n3">
+                                        <f:facet name="zoom100">
+                                            <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical" id="pgl5">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl6">
+                                                    <af:panelGroupLayout layout="vertical" id="pgl4">
+                                                        <af:outputText value="#{node.Name}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Name.tooltip}"
+                                                                       inlineStyle="font-weight:bold;font-size:14px;color:#383A47"
+                                                                       id="ot12"/>
+                                                        <af:outputText value="#{node.Id}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Id.tooltip}"
+                                                                       inlineStyle="font-size:14px;color:#383A47"
+                                                                       id="ot19">
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Depth_1_VO1.hints.Id.format}"/>
+                                                        </af:outputText>
+                                                        <af:outputText value="#{node.Description}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Description.tooltip}"
+                                                                       inlineStyle="font-style:italic;font-size:14px;color:#383A47"
+                                                                       id="ot11"/>
+                                                    </af:panelGroupLayout>
+                                                </af:panelGroupLayout>
+                                                <af:spacer height="5" id="s4"/>
+                                                <dvt:panelCard effect="slide_horz" id="pc1">
+                                                    <af:showDetailItem text="Panel Card 1" id="sdi2">
+                                                        <af:spacer height="2" id="s5"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl4">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Time.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam11">
+                                                                <af:outputText value="#{node.Time}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Time.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot17">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Time.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Nodeid.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam10">
+                                                                <af:outputText value="#{node.Nodeid}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Nodeid.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot9">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Nodeid.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                    <af:showDetailItem text="Panel Card 2" id="sdi4">
+                                                        <af:spacer height="2" id="s3"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl3">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Cpu.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam12">
+                                                                <af:outputText value="#{node.Cpu}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Cpu.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot18">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Cpu.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Parentid.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam8">
+                                                                <af:outputText value="#{node.Parentid}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Parentid.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot3">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Parentid.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                </dvt:panelCard>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </dvt:node>
+                                    <dvt:node type="sz.susan.VO.Depth_3_VO sz.susan.VO.Depth_4_VO sz.susan.VO.Depth_5_VO sz.susan.VO.Depth_6_VO"
+                                              width="233" height="233" id="n1">
+                                        <f:facet name="zoom100">
+                                            <af:panelGroupLayout inlineStyle="padding:5px;" layout="vertical"
+                                                                 id="pgl11">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl12">
+                                                    <af:panelGroupLayout layout="vertical" id="pgl7">
+                                                        <af:outputText value="#{node.Name}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Name.tooltip}"
+                                                                       inlineStyle="font-weight:bold;font-size:14px;color:#383A47"
+                                                                       id="ot20"/>
+                                                        <af:outputText value="#{node.Id}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Id.tooltip}"
+                                                                       inlineStyle="font-size:14px;color:#383A47"
+                                                                       id="ot7">
+                                                            <af:convertNumber groupingUsed="false"
+                                                                              pattern="#{bindings.Depth_1_VO1.hints.Id.format}"/>
+                                                        </af:outputText>
+                                                        <af:outputText value="#{node.Description}"
+                                                                       shortDesc="#{bindings.Depth_1_VO1.hints.Description.tooltip}"
+                                                                       inlineStyle="font-style:italic;font-size:14px;color:#383A47"
+                                                                       id="ot2"/>
+                                                    </af:panelGroupLayout>
+                                                </af:panelGroupLayout>
+                                                <af:spacer height="5" id="s1"/>
+                                                <dvt:panelCard effect="slide_horz" id="pc3">
+                                                    <af:showDetailItem text="Panel Card 1" id="sdi1">
+                                                        <af:spacer height="2" id="s2"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl2">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Time.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam3">
+                                                                <af:outputText value="#{node.Time}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Time.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot6">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Time.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Id1.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam6">
+                                                                <af:outputText value="#{node.Id1}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Id1.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot21">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Id1.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                    <af:showDetailItem text="Panel Card 2" id="sdi3">
+                                                        <af:spacer height="2" id="s6"/>
+                                                        <af:panelFormLayout inlineStyle="padding:5px;" id="pfl1">
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Cpu.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam1">
+                                                                <af:outputText value="#{node.Cpu}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Cpu.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot4">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Cpu.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                            <af:panelLabelAndMessage label="#{bindings.Depth_1_VO1.hints.Parentid.label}"
+                                                                                     labelStyle="font-size:14px;color:#5A6A7A"
+                                                                                     id="plam5">
+                                                                <af:outputText value="#{node.Parentid}"
+                                                                               shortDesc="#{bindings.Depth_1_VO1.hints.Parentid.tooltip}"
+                                                                               inlineStyle="font-size:14px;color:#383A47"
+                                                                               id="ot16">
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Depth_1_VO1.hints.Parentid.format}"/>
+                                                                </af:outputText>
+                                                            </af:panelLabelAndMessage>
+                                                        </af:panelFormLayout>
+                                                    </af:showDetailItem>
+                                                </dvt:panelCard>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </dvt:node>
+                                </dvt:hierarchyViewer>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                        <af:panelGroupLayout id="pgl1" inlineStyle="font-size:xx-large; font-weight:bolder; color:Red;"
+                                             layout="vertical" halign="center" valign="middle">
+                            交易详细信息
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:panelStretchLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ViewLink2"
+  Version="11.1.2.64.36">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="sz.susan.ViewLink.ViewLink2_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="Depth_1_VO"
+    Cardinality="1"
+    Source="true"
+    Owner="sz.susan.VO.Depth_1_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Depth_1_VO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sz.susan.VO.Depth_1_VO.Id1"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Depth_2_VO"
+    Cardinality="-1"
+    Owner="sz.susan.VO.Depth_2_VO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Depth_2_VO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sz.susan.VO.Depth_2_VO.Parentid"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sz.susan.model.SusanPublicModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

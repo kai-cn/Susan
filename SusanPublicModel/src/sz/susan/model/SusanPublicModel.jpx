@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SusanPublicModel"
+  Version="11.1.2.64.36"
+  SeparateXMLFiles="true"
+  PackageName="sz.susan.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../SusanPublicModel.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="susandb"/>
+    <Attr Name="_appModuleNames0" Value="sz.susan.AM.transAM"/>
+  </DesignTime>
+  <Containee
+    Name="AM"
+    PackageName="sz.susan.AM"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="asso"
+    PackageName="sz.susan.asso"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="EO"
+    PackageName="sz.susan.EO"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="ViewLink"
+    PackageName="sz.susan.ViewLink"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="VO"
+    PackageName="sz.susan.VO"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

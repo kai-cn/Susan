@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="QueryView" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelStretchLayout id="psl1" bottomHeight="193px">
+                    <f:facet name="bottom">
+                        <af:panelGroupLayout layout="scroll" id="pgl5" halign="center">
+                            <f:verbatim>
+                                <img width="150" height="18"
+                                     src="http://docs.oracle.com/cd/E14571_01/dcommon/gifs/oracle.gif" alt="Oracle"
+                                     style="color:rgb(0,0,0); font-family:Tahoma, sans-serif; font-size:12px; font-style:normal; font-variant:normal; font-weight:normal; letter-spacing:normal; line-height:normal; text-align:center; text-indent:0px; text-transform:none; white-space:normal; word-spacing:0px; -webkit-text-stroke-width:0px; background-color:rgb(255,255,255);"
+                                     align="middle">
+                                    <br style="color: rgb(0, 0, 0); font-family: Tahoma, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+                                        <span style="color: rgb(0, 0, 0); font-family: Tahoma, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); display: inline !important; float: none;">Copyright&nbsp;©&nbsp;2010,&nbsp;Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span>
+                                    </br>
+                                </img>
+                            </f:verbatim>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="center">
+                        <af:panelGroupLayout layout="scroll" id="pgl4">
+                            <af:panelGroupLayout layout="vertical" id="pgl3" halign="center" valign="middle">
+                                <af:panelHeader text="" id="ph1">
+                                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                                              value="#{bindings.trancationVOCriteriaQuery.queryDescriptor}"
+                                              model="#{bindings.trancationVOCriteriaQuery.queryModel}"
+                                              queryListener="#{bindings.trancationVOCriteriaQuery.processQuery}"
+                                              queryOperationListener="#{bindings.trancationVOCriteriaQuery.processQueryOperation}"
+                                              resultComponentId="::resId1"/>
+                                    <af:panelGroupLayout id="pgl1">
+                                        <af:table value="#{bindings.trancationVO1.collectionModel}" var="row"
+                                                  rows="#{bindings.trancationVO1.rangeSize}"
+                                                  emptyText="#{bindings.trancationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  fetchSize="#{bindings.trancationVO1.rangeSize}" rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.trancationVO1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.trancationVO1.collectionModel.makeCurrent}"
+                                                  rowSelection="single" id="resId1" partialTriggers="cl1"
+                                                  columnStretching="multiple" width="1500">
+                                            <af:column sortProperty="#{bindings.trancationVO1.hints.Id.name}"
+                                                       sortable="false"
+                                                       headerText="#{bindings.trancationVO1.hints.Id.label}"
+                                                       id="resId1c1" width="245" rendered="false">
+                                                <af:outputText value="#{row.Id}"
+                                                               shortDesc="#{bindings.trancationVO1.hints.Id.tooltip}"
+                                                               id="ot2">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.trancationVO1.hints.Id.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.trancationVO1.hints.Name.name}"
+                                                       sortable="false"
+                                                       headerText="#{bindings.trancationVO1.hints.Name.label}"
+                                                       id="resId1c2" width="189">
+                                                <af:commandLink id="cl1"
+                                                                actionListener="#{bindings.setCurrentRowWithKey.execute}"
+                                                                disabled="#{!bindings.setCurrentRowWithKey.enabled}"
+                                                                action="detail">
+                                                    <af:outputText value="#{row.Name}"
+                                                                   shortDesc="#{bindings.trancationVO1.hints.Name.tooltip}"
+                                                                   id="ot3"/>
+                                                </af:commandLink>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.trancationVO1.hints.Successflag.name}"
+                                                       sortable="false"
+                                                       headerText="#{bindings.trancationVO1.hints.Successflag.label}"
+                                                       id="resId1c3" width="171">
+                                                <af:outputText value="#{row.Successflag}"
+                                                               shortDesc="#{bindings.trancationVO1.hints.Successflag.tooltip}"
+                                                               id="ot4"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.trancationVO1.hints.Description.name}"
+                                                       sortable="false"
+                                                       headerText="#{bindings.trancationVO1.hints.Description.label}"
+                                                       id="resId1c4" width="268">
+                                                <af:outputText value="#{row.Description}"
+                                                               shortDesc="#{bindings.trancationVO1.hints.Description.tooltip}"
+                                                               id="ot5"/>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.trancationVO1.hints.Transactiondate.name}"
+                                                       sortable="false"
+                                                       headerText="#{bindings.trancationVO1.hints.Transactiondate.label}"
+                                                       id="resId1c5" width="114">
+                                                <af:outputText value="#{row.Transactiondate}"
+                                                               shortDesc="#{bindings.trancationVO1.hints.Transactiondate.tooltip}"
+                                                               id="ot6">
+                                                    <af:convertDateTime pattern="#{bindings.trancationVO1.hints.Transactiondate.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelGroupLayout>
+                                </af:panelHeader>
+                            </af:panelGroupLayout>
+                            <p>
+                                &nbsp;
+                            </p>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                        <af:panelGroupLayout layout="scroll" id="pgl2" halign="center" valign="bottom">
+                            <h4>
+                                <strong>
+                                    <em>
+                                        <af:outputText value="服务调用关系分析" id="ot7"
+                                                       inlineStyle="color:Red; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; text-align:center; font-size:xx-large; font-style:normal;"/></em></strong>
+                            </h4>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end"/>
+                </af:panelStretchLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

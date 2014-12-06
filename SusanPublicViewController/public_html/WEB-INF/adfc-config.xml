@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="QueryView">
+    <page>/QueryView.jspx</page>
+  </view>
+  <view id="DisplayVIew">
+    <page>/DisplayVIew.jspx</page>
+  </view>
+  <view id="GraphView">
+    <page>/GraphView.jspx</page>
+  </view>
+  <view id="MainPage">
+    <page>/MainPage.jspx</page>
+  </view>
+  <view id="TransactionView">
+    <page>/TransactionView.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>QueryView</from-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>detail</from-outcome>
+      <to-activity-id>DisplayVIew</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__2">
+    <from-activity-id>DisplayVIew</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>generate</from-outcome>
+      <to-activity-id>TransactionView</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__4">
+    <managed-bean-name>DisplayViewBean</managed-bean-name>
+    <managed-bean-class>sz.susan.view.DisplayViewBean</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

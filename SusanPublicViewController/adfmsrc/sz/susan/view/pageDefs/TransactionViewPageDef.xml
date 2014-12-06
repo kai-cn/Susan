@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="TransactionViewPageDef"
+                Package="sz.susan.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CpuViewObj1" RangeSize="-1" DataControl="transAMDataControl" id="CpuViewObj1Iterator"/>
+  </executables>
+  <bindings>
+    <graph IterBinding="CpuViewObj1Iterator" id="CpuViewObj1" xmlns="http://xmlns.oracle.com/adfm/dvt"
+           type="LINE_VERT_ABS">
+      <graphDataMap convert="false" leafOnly="true">
+        <series>
+          <data>
+            <item value="Cpu1" label="${adfBundle['sz.susan.view.SusanPublicViewControllerBundle'].ACTUALCPU}"/>
+            <item value="Cpu" label="${adfBundle['sz.susan.view.SusanPublicViewControllerBundle'].EXCEPTEDCPU}"/>
+          </data>
+        </series>
+        <groups>
+          <item value="Name"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="CpuViewObj1Iterator" id="CpuViewObj11" xmlns="http://xmlns.oracle.com/adfm/dvt"
+           type="LINE_VERT_ABS">
+      <graphDataMap convert="false" leafOnly="true">
+        <series>
+          <data>
+            <item value="Time" label="${adfBundle['sz.susan.view.SusanPublicViewControllerBundle'].EXCEPTEDTIME}"/>
+            <item value="Time1" label="${adfBundle['sz.susan.view.SusanPublicViewControllerBundle'].ACTUALLYTIME}"/>
+          </data>
+        </series>
+        <groups>
+          <item value="Name"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ServiceEO"
+  Version="11.1.2.64.36"
+  DBObjectType="TABLE"
+  DBObjectName="SUSAN.SERVICE"
+  AliasName="ServiceEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    Precision="7"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="SUSAN.SERVICE"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Name"
+    Precision="25"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUSAN.SERVICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="50"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUSAN.SERVICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Time"
+    Precision="7"
+    Scale="0"
+    ColumnName="TIME"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="SUSAN.SERVICE"/>
+  <Attribute
+    Name="Cpu"
+    Precision="7"
+    Scale="0"
+    ColumnName="CPU"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="SUSAN.SERVICE"/>
+  <Attribute
+    Name="Attribute6"
+    Precision="25"
+    ColumnName="ATTRIBUTE_6"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUSAN.SERVICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute7"
+    Precision="25"
+    ColumnName="ATTRIBUTE_7"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUSAN.SERVICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute8"
+    Precision="25"
+    ColumnName="ATTRIBUTE_8"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUSAN.SERVICE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute9"
+    Precision="7"
+    Scale="0"
+    ColumnName="ATTRIBUTE_9"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="SUSAN.SERVICE"/>
+  <Attribute
+    Name="Attribute10"
+    Precision="7"
+    Scale="0"
+    ColumnName="ATTRIBUTE_10"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="SUSAN.SERVICE"/>
+  <Key
+    Name="ServicePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SERVICE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sz.susan.EO.ServiceEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

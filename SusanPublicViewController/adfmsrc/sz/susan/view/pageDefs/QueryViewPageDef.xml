@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="QueryViewPageDef"
+                Package="sz.susan.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="trancationVO1" RangeSize="25" DataControl="transAMDataControl" id="trancationVO1Iterator"/>
+    <searchRegion Criteria="trancationVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="trancationVO1Iterator" id="trancationVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="trancationVO1Iterator" id="trancationVO1">
+      <nodeDefinition DefName="sz.susan.VO.trancationVO" Name="trancationVO10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Successflag"/>
+          <Item Value="Description"/>
+          <Item Value="Transactiondate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="trancationVO1Iterator" id="setCurrentRowWithKey" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String" NDValue="#{row.rowKeyStr}"/>
+    </action>
+  </bindings>
+</pageDefinition>

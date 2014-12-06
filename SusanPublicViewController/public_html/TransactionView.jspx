@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="TransactionView" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelStretchLayout id="psl1">
+                    <f:facet name="bottom"/>
+                    <f:facet name="center">
+                        <af:panelGridLayout id="pgl1">
+                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                <af:gridCell marginStart="5px" width="50%" id="gc1" halign="center" valign="middle">
+                                    <dvt:lineGraph id="graph1" value="#{bindings.CpuViewObj1.graphModel}"
+                                                   subType="LINE_VERT_ABS">
+                                        <dvt:background>
+                                            <dvt:specialEffects/>
+                                        </dvt:background>
+                                        <dvt:graphPlotArea/>
+                                        <dvt:seriesSet>
+                                            <dvt:series/>
+                                        </dvt:seriesSet>
+                                        <dvt:o1Axis/>
+                                        <dvt:y1Axis/>
+                                        
+                                        <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                                    </dvt:lineGraph>
+                                    <af:outputText value="服务cpu占有率" id="ot1"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc2" halign="center"
+                                             valign="middle">
+                                    <dvt:lineGraph id="graph2" value="#{bindings.CpuViewObj11.graphModel}"
+                                                   subType="LINE_VERT_ABS">
+                                        <dvt:background>
+                                            <dvt:specialEffects/>
+                                        </dvt:background>
+                                        <dvt:graphPlotArea/>
+                                        <dvt:seriesSet>
+                                            <dvt:series/>
+                                        </dvt:seriesSet>
+                                        <dvt:o1Axis/>
+                                        <dvt:y1Axis/>
+                                        <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                                    </dvt:lineGraph>
+                                    <af:outputText value="服务时间占有率" id="ot2"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" marginBottom="5px" height="auto" id="gr2">
+                                <af:gridCell marginStart="5px" width="50%" id="gc3" halign="center" valign="middle"/>
+                                <af:gridCell marginStart="5px" marginEnd="5px" width="50%" id="gc4" halign="center"
+                                             valign="middle"/>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </f:facet>
+                    <f:facet name="start"/>
+                    <f:facet name="end"/>
+                    <f:facet name="top">
+                        <f:verbatim>
+                            结果统计分析
+                        </f:verbatim>
+                    </f:facet>
+                </af:panelStretchLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
